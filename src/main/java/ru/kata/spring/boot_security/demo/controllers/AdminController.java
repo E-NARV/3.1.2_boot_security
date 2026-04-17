@@ -23,13 +23,13 @@ public class AdminController {
     @GetMapping
     public String index(Model model) {
         model.addAttribute("users", userService.findAll());
-        return "admin/index"; // Здесь ссылаемся на страницу login.html
+        return "admin/index";
     }
 
     @GetMapping("/new")
-    public String newUser(@ModelAttribute("user") User user, Model model) { // Создаем "пустого" юзера
+    public String newUser(@ModelAttribute("user") User user, Model model) {
         model.addAttribute("allRoles", roleService.findAll());
-        return "admin/new"; // Здесь ссылаемся на страницу new.html
+        return "admin/new";
     }
 
     @PostMapping("/create")
@@ -43,7 +43,7 @@ public class AdminController {
     public String edit(@RequestParam("id") Long id, Model model) {
         model.addAttribute("user", userService.findById(id));
         model.addAttribute("allRoles", roleService.findAll());
-        return "admin/edit"; // Здесь ссылаемся на страницу edit.html
+        return "admin/edit";
     }
 
     @PostMapping("/update")
