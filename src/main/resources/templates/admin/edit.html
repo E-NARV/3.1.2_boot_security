@@ -22,6 +22,10 @@
     <input type="text" th:field="*{surname}" id="surname"/>
     <br/>
 
+    <label for="age">Age:</label>
+    <input type="number" th:field="*{age}" id="age"/>
+    <br/>
+
     <label for="password">New password (leave empty to keep current):</label>
     <input type="password" th:field="*{password}" id="password"/>
     <br/>
@@ -31,7 +35,7 @@
         <div th:each="r : ${allRoles}">
             <label>
                 <input type="checkbox"
-                       name="roleIds"
+                       name="roleId"
                        th:value="${r.id}"
                        th:checked="${user.roles.contains(r)}"/>
                 <span th:text="${r.name}"></span>
